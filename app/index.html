@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Unofficial fan guide</p>
+      <h1>Leonida Platinum</h1>
+      <p class="tagline">Every one of the 55 trophies — the official list, a guide that cites its sources, a roadmap to the platinum, and a tracker that remembers where you are.</p>
+    </div>
+    <div class="progress-card" id="progressCard" aria-label="Progress toward platinum">
+      <p class="progress-count"><span id="earnedCount">0</span><span class="progress-total"> / 55</span></p>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBarWrap"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <p class="progress-label" id="progressLabel">0% to the platinum</p>
+      <p class="progress-grades" id="progressGrades">Platinum 0/1 &middot; Gold 0/2 &middot; Silver 0/6 &middot; Bronze 0/46</p>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Guide sections">
+    <button type="button" class="tab active" data-view="checklist" id="tab-checklist">Checklist</button>
+    <button type="button" class="tab" data-view="roadmap" id="tab-roadmap">Roadmap to Platinum</button>
+    <button type="button" class="tab" data-view="missables" id="tab-missables">Missables <span class="tab-badge" id="missableBadge">7</span></button>
+    <button type="button" class="tab" data-view="about" id="tab-about">About &amp; Sources</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-checklist" class="view active" aria-label="Trophy checklist">
+    <div class="toolbar">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Trophy name, mission or keyword…" autocomplete="off"></label>
+      <label>Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="side">Side strands</option>
+          <option value="collectible">Collectibles</option>
+          <option value="activity">Activities</option>
+          <option value="combat">Combat &amp; crime</option>
+          <option value="exploration">Exploration</option>
+          <option value="misc">Everything else</option>
+        </select>
+      </label>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+      <label class="check"><input id="hideEarned" type="checkbox"> Hide earned</label>
+      <label class="check spoiler-check"><input id="spoilerToggle" type="checkbox"> Hide story spoilers</label>
+      <span class="toolbar-spacer"></span>
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+    <p class="list-meta"><span id="shownCount">55</span> trophies shown &middot; <span id="earnedShown">0 earned</span> &middot; spoiler mode <strong id="spoilerState">off</strong> &middot; this list has no online trophies</p>
+    <div class="layout">
+      <div class="trophy-list" id="trophyList" role="list"></div>
+      <aside class="detail" id="detailPanel" aria-label="Trophy guide detail">
+        <p class="detail-empty" id="detailEmpty">Select a trophy to read its guide, its sources and what is still to confirm.</p>
+        <article class="detail-body" id="detailBody" hidden></article>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view" aria-label="Roadmap to the platinum">
+    <h2>The road to the platinum</h2>
+    <p class="section-intro">Built from the official descriptions alone: which story chapters and missions, which collectibles and counts, in what order. Five stages, in order — do not start the finale (Stage 1's last mission) until the stranger strands in Stage 2 are done.</p>
+    <div id="roadmapStages"></div>
+  </section>
+
+  <section id="view-missables" class="view" aria-label="Missable trophies">
+    <h2>Missable trophies — do these before the finale</h2>
+    <p class="section-intro">Seven trophies are flagged as possibly missable. The flag means the official description does not say the content stays available after the final story mission, so the safe play is to finish them first. Everything else in the list can be earned after the story ends. Each card below says why it is flagged and what is still to confirm.</p>
+    <div id="missableList" class="missable-grid"></div>
+    <h3>Why only seven?</h3>
+    <p class="section-intro">Story chapter and mission trophies cannot be missed: you must finish the chapters to finish the game. Activities, collectibles and exploration stay open in free roam after the story. The seven flagged here are the stranger-strand finals — side chains that may close when the story ends — plus “Actions Speak Louder”, whose choices cannot be unmade.</p>
+  </section>
+
+  <section id="view-about" class="view" aria-label="About and sources">
+    <h2>About this guide</h2>
+    <p class="section-intro">An unofficial, open-source fan guide. It is not affiliated with Rockstar Games or PlayStation, and it shows no Rockstar logo, official artwork or game screenshots — the look is its own.</p>
+    <h3>Where every fact comes from</h3>
+    <ul class="about-list">
+      <li><strong>Names, descriptions and grades</strong> — the official PlayStation 5 trophy list, as published by PlayStation and listed by Exophase (exophase.com/game/grand-theft-auto-vi-psn/trophies/) and PSNProfiles (psnprofiles.com/trophies/43531-grand-theft-auto-vi). The two lists agree on every name, description and grade.</li>
+      <li><strong>Counts</strong> (42 Shooting Range challenges, 14 drone race locations, 18 meditation spots, 52 areas of Leonida, 9 gangs, 100 vehicles, 250 stunts, 50 challenges, 3 card sets, 100 WAiNK It locations, 8 garage properties, $250,000 laundered, $100,000 spent, 10 Scooter Bros registrations, 500 tracked choices) — PSN's progress targets as listed by PSNProfiles.</li>
+      <li><strong>Guides</strong> — written for this guide from the official descriptions. Where the description does not pin down a place or a step, the guide says so plainly instead of inventing one. Nothing is copied from another guide, wiki, video or forum.</li>
+      <li><strong>Hidden flags</strong> — 28 trophies are hidden on PlayStation until earned. The kit this guide was built from did not carry per-trophy hidden flags, so they mark the story and secret trophies, totalling 28 to match the published count. Re-check the exact set against PSNProfiles once the game is out.</li>
+    </ul>
+    <h3>How the tracker works</h3>
+    <ul class="about-list">
+      <li>Tick a trophy when you earn it. Progress is saved in your browser (localStorage) and never leaves your machine.</li>
+      <li><strong>Export progress</strong> downloads a JSON file of your earned trophies; <strong>Import progress</strong> reads such a file back.</li>
+      <li><strong>Hide story spoilers</strong> hides the names, descriptions and guides of story trophies you have not earned yet, until you earn them.</li>
+      <li>Filters: kind (story, side strands, collectibles, activities, combat &amp; crime, exploration, everything else), grade, missable only, hide earned, and search. This list has no online trophies, so there is no online filter to offer.</li>
+      <li>The guide works offline: it loads only its own files and makes no network request.</li>
+    </ul>
+    <h3>Honesty note</h3>
+    <p class="section-intro">Grand Theft Auto VI released the day this guide was built. Any guide that claims exact locations, trigger details or optimal routes on day one is guessing. This guide grounds every step in the official description and marks what is still to confirm on each trophy's card — a cited, honest guide beats a detailed invented one.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Platinum — an unofficial fan-made GTA VI trophy guide &amp; tracker. Not affiliated with Rockstar Games, Take-Two Interactive or Sony Interactive Entertainment. Trophy names, descriptions and grades are PlayStation's, shown as published. Works offline; no data leaves your browser.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
